@@ -25,6 +25,8 @@
             <ul class="nav__menu">
                 <li><a href="#quem-somos">Quem Somos</a></li>
                 <li><a href="#teaser">Teaser</a></li>
+                <li><a href="#videos">Vídeos</a></li>
+                <li><a href="#galeria">Galeria</a></li>
                 <li><a href="#diretoria">Diretoria</a></li>
                 <li><a href="#projetos">Projetos</a></li>
                 <li><a href="#cursos">Cursos</a></li>
@@ -135,15 +137,129 @@
                 </div>
 
                 <div class="teaser__video">
-                    <div style="position: relative; padding-bottom: 56.25%; height: 0; background: #000;">
-                        <iframe 
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
-                            src="assets/videos/03 - oficina marco xavier.mp4" 
-                            title="Teaser Aplauso Contemporâneo"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                        </iframe>
-                    </div>
+                    <video controls autoplay muted loop playsinline preload="metadata" poster="assets/images/simone e maureen Mujer rota oficina.jpg">
+                        <source src="assets/videos/03 - oficina marco xavier.mp4" type="video/mp4">
+                        Seu navegador não suporta a reprodução de vídeos.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== VÍDEOS E GALERIA ===== -->
+        <section class="midias section" id="videos">
+            <div class="container">
+                <div class="midias__header">
+                    <span class="section-tag">Em movimento</span>
+                    <h2 class="section-title">Vídeos da <span class="highlight">Cia</span></h2>
+                </div>
+
+                <div class="midias__video-grid">
+                    <article class="midia-video-card" data-video-modal tabindex="0" role="button" aria-label="Abrir vídeo Oficina Marco Xavier">
+                        <div class="midia-video-card__media">
+                            <video muted playsinline preload="metadata" poster="assets/images/simone e maureen Mujer rota oficina.jpg">
+                                <source src="assets/videos/03 - oficina marco xavier.mp4" type="video/mp4">
+                            </video>
+                            <span class="midia-video-card__play" aria-hidden="true"><i class="fas fa-play"></i></span>
+                        </div>
+                        <div class="midia-video-card__content">
+                            <span class="midia-card__tag">Oficina</span>
+                            <h3>Oficina Marco Xavier</h3>
+                            <p>Registros das atividades de dança e formação da Cia Aplauso Contemporâneo.</p>
+                        </div>
+                    </article>
+
+                    <article class="midia-video-card midia-video-card--empty">
+                        <div class="midia-video-card__placeholder"><i class="fas fa-video"></i></div>
+                        <div class="midia-video-card__content">
+                            <span class="midia-card__tag">Em breve</span>
+                            <h3>Novo registro</h3>
+                            <p>Este espaço está reservado para um novo vídeo da Cia.</p>
+                        </div>
+                    </article>
+                    <article class="midia-video-card midia-video-card--empty">
+                        <div class="midia-video-card__placeholder"><i class="fas fa-video"></i></div>
+                        <div class="midia-video-card__content">
+                            <span class="midia-card__tag">Em breve</span>
+                            <h3>Novo registro</h3>
+                            <p>Este espaço está reservado para um novo vídeo da Cia.</p>
+                        </div>
+                    </article>
+                    <article class="midia-video-card midia-video-card--empty">
+                        <div class="midia-video-card__placeholder"><i class="fas fa-video"></i></div>
+                        <div class="midia-video-card__content">
+                            <span class="midia-card__tag">Em breve</span>
+                            <h3>Novo registro</h3>
+                            <p>Este espaço está reservado para um novo vídeo da Cia.</p>
+                        </div>
+                    </article>
+                    <article class="midia-video-card midia-video-card--empty">
+                        <div class="midia-video-card__placeholder"><i class="fas fa-video"></i></div>
+                        <div class="midia-video-card__content">
+                            <span class="midia-card__tag">Em breve</span>
+                            <h3>Novo registro</h3>
+                            <p>Este espaço está reservado para um novo vídeo da Cia.</p>
+                        </div>
+                    </article>
+                    <article class="midia-video-card midia-video-card--empty">
+                        <div class="midia-video-card__placeholder"><i class="fas fa-video"></i></div>
+                        <div class="midia-video-card__content">
+                            <span class="midia-card__tag">Em breve</span>
+                            <h3>Novo registro</h3>
+                            <p>Este espaço está reservado para um novo vídeo da Cia.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <div class="video-modal" id="videoModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="videoModalTitle">
+            <div class="video-modal__backdrop" data-video-modal-close></div>
+            <div class="video-modal__content">
+                <button class="video-modal__close" type="button" data-video-modal-close aria-label="Fechar vídeo"><i class="fas fa-times"></i></button>
+                <h2 id="videoModalTitle">Oficina Marco Xavier</h2>
+                <video id="videoModalPlayer" controls>
+                    <source src="assets/videos/03 - oficina marco xavier.mp4" type="video/mp4">
+                    Seu navegador não suporta a reprodução de vídeos.
+                </video>
+            </div>
+        </div>
+
+        <section class="galeria section" id="galeria">
+            <div class="container">
+                <div class="galeria__header">
+                    <span class="section-tag">Memórias</span>
+                    <h2 class="section-title">Galeria de <span class="highlight">Fotos</span></h2>
+                </div>
+
+                <div class="galeria__grid">
+                    <figure class="galeria__item">
+                        <img src="assets/images/simone e maureen Mujer rota oficina.jpg" alt="Artistas durante oficina de dança contemporânea" loading="lazy">
+                        <figcaption>Oficina de dança contemporânea</figcaption>
+                    </figure>
+                    <figure class="galeria__item galeria__item--empty">
+                        <div><i class="fas fa-image"></i><span>Nova foto em breve</span></div>
+                    </figure>
+                    <figure class="galeria__item galeria__item--empty">
+                        <div><i class="fas fa-image"></i><span>Nova foto em breve</span></div>
+                    </figure>
+                    <figure class="galeria__item galeria__item--empty">
+                        <div><i class="fas fa-image"></i><span>Nova foto em breve</span></div>
+                    </figure>
+                    <figure class="galeria__item galeria__item--empty">
+                        <div><i class="fas fa-image"></i><span>Nova foto em breve</span></div>
+                    </figure>
+                    <figure class="galeria__item galeria__item--empty">
+                        <div><i class="fas fa-image"></i><span>Nova foto em breve</span></div>
+                    </figure>
+                    <figure class="galeria__item galeria__item--empty">
+                        <div><i class="fas fa-image"></i><span>Nova foto em breve</span></div>
+                    </figure>
+                    <figure class="galeria__item galeria__item--empty">
+                        <div><i class="fas fa-image"></i><span>Nova foto em breve</span></div>
+                    </figure>
+                    <figure class="galeria__item galeria__item--empty">
+                        <div><i class="fas fa-image"></i><span>Nova foto em breve</span></div>
+                    </figure>
                 </div>
             </div>
         </section>
@@ -525,6 +641,8 @@
                     <ul>
                         <li><a href="#home">Início</a></li>
                         <li><a href="#quem-somos">Quem Somos</a></li>
+                        <li><a href="#videos">Vídeos</a></li>
+                        <li><a href="#galeria">Galeria</a></li>
                         <li><a href="#diretoria">Diretoria</a></li>
                         <li><a href="#projetos">Projetos</a></li>
                         <li><a href="#cursos">Cursos</a></li>

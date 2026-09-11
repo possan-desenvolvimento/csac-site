@@ -119,3 +119,44 @@ if (yearSpan) {
     const currentYear = new Date().getFullYear();
     yearSpan.textContent = yearSpan.textContent.replace('2024', currentYear);
 }
+
+// ========== VIDEO MODAL ==========
+const videoModal = document.getElementById('videoModal');
+const videoModalPlayer = document.getElementById('videoModalPlayer');
+const videoCards = document.querySelectorAll('[data-video-modal]');
+const videoModalClose = document.querySelectorAll('[data-video-modal-close]');
+
+const closeVideoModal = () => {
+    videoModal.classList.remove('active');
+    videoModal.setAttribute('aria-hidden', 'true');
+    videoModalPlayer.pause();
+    videoModalPlayer.currentTime = 0;
+    document.body.style.overflow = '';
+};
+
+videoCards.forEach((card) => {
+    const openVideoModal = () => {
+        videoModal.classList.add('active');
+        videoModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        videoModalPlayer.play();
+    };
+
+    card.addEventListener('click', openVideoModal);
+    card.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            openVideoModal();
+        }
+    });
+});
+
+videoModalClose.forEach((element) => {
+    element.addEventListener('click', closeVideoModal);
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && videoModal.classList.contains('active')) {
+        closeVideoModal();
+    }
+});

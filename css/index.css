@@ -297,12 +297,241 @@
 }
 
 .teaser__video {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0,0,0,0.5);
     border: 1px solid rgba(212, 165, 116, 0.05);
+}
+
+.teaser__video video,
+.midia-video-card__media video {
+    display: block;
+    width: 100%;
+}
+
+.teaser__video video {
+    height: 320px;
+    object-fit: cover;
+}
+
+/* ========== VÍDEOS E GALERIA ========== */
+.midias,
+.galeria {
+    background: var(--dark);
+}
+
+.midias__header,
+.galeria__header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.midias__video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.midia-video-card,
+.galeria__item {
+    background: var(--dark-card);
+    border: 1px solid rgba(212, 165, 116, 0.05);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.midia-video-card {
+    cursor: pointer;
+}
+
+.midia-video-card:focus-visible {
+    outline: 2px solid var(--brand-red);
+    outline-offset: 4px;
+}
+
+.midia-video-card:hover,
+.galeria__item:hover {
+    border-color: var(--gold);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+.midia-video-card__media {
+    position: relative;
+    background: var(--dark);
+}
+
+.midia-video-card__play,
+.midia-video-card__placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 16 / 9;
+}
+
+.midia-video-card__play {
+    position: absolute;
+    inset: 0;
+    color: var(--white);
+    font-size: 1.4rem;
+    background: rgba(10,10,10,0.24);
+    transition: var(--transition);
+}
+
+.midia-video-card:hover .midia-video-card__play {
+    background: rgba(214,40,40,0.55);
+}
+
+.midia-video-card__placeholder {
+    color: rgba(255,255,255,0.22);
+    background: var(--dark);
+    font-size: 1.8rem;
+}
+
+.midia-video-card--empty {
+    cursor: default;
+}
+
+.midia-video-card--empty:hover {
+    transform: none;
+    border-color: rgba(212, 165, 116, 0.05);
+    box-shadow: none;
+}
+
+.midia-video-card__content {
+    padding: 1.5rem 1.75rem 1.75rem;
+}
+
+.midia-card__tag {
+    color: var(--gold);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.midia-video-card h3 {
+    font-family: var(--font-primary);
+    font-size: 1.35rem;
+    color: var(--white);
+    margin: 0.4rem 0 0.5rem;
+}
+
+.midia-video-card p {
+    color: rgba(255,255,255,0.4);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.galeria__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.galeria__item {
+    margin: 0;
+}
+
+.galeria__item img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.galeria__item--empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 4 / 3;
+    color: rgba(255,255,255,0.25);
+    background: var(--dark);
+}
+
+.galeria__item--empty div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 0.8rem;
+}
+
+.galeria__item--empty i {
+    color: var(--gold);
+    font-size: 1.6rem;
+}
+
+.galeria__item figcaption {
+    padding: 1rem 1.25rem 1.2rem;
+    color: rgba(255,255,255,0.55);
+    font-size: 0.85rem;
+}
+
+.video-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1100;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.video-modal.active {
+    display: flex;
+}
+
+.video-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.82);
+}
+
+.video-modal__content {
+    position: relative;
+    z-index: 1;
+    width: min(900px, 100%);
+    padding: 2rem;
+    background: var(--dark-card);
+    border: 1px solid rgba(212, 165, 116, 0.12);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-hover);
+}
+
+.video-modal__content h2 {
+    margin-bottom: 1rem;
+    color: var(--white);
+    font-family: var(--font-primary);
+    font-size: 1.4rem;
+}
+
+.video-modal__content video {
+    display: block;
+    width: 100%;
+    max-height: 75vh;
+    background: var(--dark);
+}
+
+.video-modal__close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 2rem;
+    height: 2rem;
+    border: 0;
+    border-radius: 50%;
+    color: var(--white);
+    background: transparent;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.video-modal__close:hover {
+    color: var(--brand-red);
 }
 
 /* ========== DIRETORIA ========== */
@@ -774,7 +1003,9 @@
     .projetos__grid,
     .cursos__grid,
     .participe__grid,
-    .transparencia__grid {
+    .transparencia__grid,
+    .galeria__grid,
+    .midias__video-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -826,7 +1057,9 @@
     .projetos__grid,
     .cursos__grid,
     .participe__grid,
-    .transparencia__grid {
+    .transparencia__grid,
+    .galeria__grid,
+    .midias__video-grid {
         grid-template-columns: 1fr;
         max-width: 400px;
         margin: 0 auto;
@@ -835,6 +1068,14 @@
     .diretoria-card__image {
         width: 100px;
         height: 100px;
+    }
+
+    .video-modal__content {
+        padding: 1.25rem;
+    }
+
+    .teaser__video video {
+        height: 220px;
     }
     
     .diretoria__subtitle {
