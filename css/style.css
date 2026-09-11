@@ -4,6 +4,7 @@
     --primary-dark: #C49A6C;
     --primary-light: #E8C9A8;
     --gold: #D4A574;
+    --brand-red: #D62828;
     --dark: #0A0A0A;
     --dark-card: #141414;
     --dark-light: #1A1A1A;
@@ -144,7 +145,7 @@ body {
 
 .logo-icon {
     font-size: 1.5rem;
-    color: var(--gold);
+    color: var(--brand-red);
 }
 
 .nav__menu {
@@ -172,13 +173,13 @@ body {
     left: 0;
     width: 0;
     height: 1.5px;
-    background: var(--gold);
+    background: var(--brand-red);
     transition: var(--transition);
 }
 
 .nav__menu a:hover,
 .nav__menu a.active {
-    color: var(--white);
+    color: var(--brand-red);
 }
 
 .nav__menu a:hover::after,
@@ -200,7 +201,7 @@ body {
 }
 
 .nav__social a:hover {
-    color: var(--gold);
+    color: var(--brand-red);
     transform: translateY(-2px);
 }
 
@@ -486,7 +487,7 @@ body {
     grid-template-columns: 2fr 1fr 1fr 1.5fr;
     gap: 3rem;
     margin-bottom: 2rem;
-}
+    color: var(--brand-red);
 
 .footer__logo {
     display: flex;
@@ -500,7 +501,7 @@ body {
 }
 
 .footer__logo span:first-child {
-    color: var(--gold);
+    color: var(--brand-red);
 }
 
 .footer__brand p {
@@ -530,7 +531,7 @@ body {
 }
 
 .footer__social a:hover {
-    background: var(--gold);
+    background: var(--brand-red);
     color: var(--dark);
     transform: translateY(-3px);
 }
@@ -561,7 +562,7 @@ body {
 }
 
 .footer__links ul a:hover {
-    color: var(--gold);
+    color: var(--brand-red);
 }
 
 .footer__contact p {
