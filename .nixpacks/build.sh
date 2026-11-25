@@ -1,0 +1,1 @@
+docker build /etc/easypanel/projects/sites-sistemas/csac-site/code/ -f /etc/easypanel/projects/sites-sistemas/csac-site/code/.nixpacks/Dockerfile -t easypanel/sites-sistemas/csac-site --build-arg GIT_SHA=268bf8edf3d007ac7417373a299e6abaf751c9a3 --build-arg NIXPACKS_METADATA=staticfile --label keep=true
